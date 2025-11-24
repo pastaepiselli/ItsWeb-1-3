@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width., initial-scale=1.0" />
+    <title>Esercizio 6</title>
+<body>
+    <div>
+        <h1 id="contatore"> 0 </h1>
+        <button id="bottone">
+            ADD +1
+        </button>
+    </div>
+    <script>
+        const contatore = document.getElementById('contatore')
+        const bottone = document.getElementById('bottone')
+        let count = 0
+        contatore.innerHTML = count
+        bottone.addEventListener('click', () => {
+            count += 1
+            contatore.innerHTML = count
+        })
+    </script>
+</body>
+</html>
