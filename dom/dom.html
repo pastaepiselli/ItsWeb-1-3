@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  js : funzioni (blocco di istruzioni) che hanno un blocco di riferimento
+        function test() {
+            document.body.style.background = 'red'
+
+            let x = document.getElementById('miotitolo')
+            x.style.color = 'blue'; // cambio stile
+            x.setAttribute("onclick", "document.body.style.background = 'green'")
+
+            let y = document.createElement('h1')
+            y.innerHTML = ('CIAO CIAO');
+            y.style.color = 'yellow';
+            y.style.backgroundColor = 'black';
+            y.setAttribute('id', 'pippo')
+
+            x.append(y)
+
+        }
+
+        function modifica(){
+
+            let z = document.getElementById('pippo')
+            z.innerHTML()
+
+            let nome = document.getElementById('nominativo').value()
+
+        }
+    </script>
+</head>
+<body>
+    <h1 id="miotitolo">DOM Document Object Model</h1>
+    <h2 id="sottotitolo">DOM oggetto visualizza la pagina html in modo gerarchico: 
+
+        JAVASCRIPT (funziona come css) ... blocco tag script    
+
+        1 - Recuperare l'elemento ... getElementById()
+
+        2 - decidere: MODIFICARE ATTRIBUTO
+                      GESTIRE EVENTO
+                      MODIFICARE CSS
+            
+    </h2>
+    <input type="text" name="nome" id="nominativo">
+    <div onclick="test()" id = 'miodiv'> cambia colore allo sfondo</div>
+    <h2></h2>
+    
+</body>
+</html>

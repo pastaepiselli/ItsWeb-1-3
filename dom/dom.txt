@@ -1,0 +1,9 @@
+1 HTML Linguaggio      posizione del contenuto
+    2 CSS   Linguaggio      grafico
+    3 DOM   Libreria(oggetto) contenitore : attributi (variabili) e metodi (azioni)
+            document           modifica dinamicamente l'HTML 
+            2 modi: DA SOLO                 eventi (oneclick) ... non ce logica applicativa
+                    TRAMITE JAVASCRIPT      eventi (oneclick) ... logica applicativa (if for ...)
+
+            EVENTI : attributi HTML
+    4 JAVASCRIPT  (simile python) 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolatrice Semplice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label, input, select, button {
+            margin: 10px 0;
+            display: block;
+        }
+        #risultato {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calcolatrice</h2>
+
+    <label for="numero1">Numero 1:</label>
+    <input type="number" id="numero1" required>
+
+    <label for="numero2">Numero 2:</label>
+    <input type="number" id="numero2" required>
+
+    <label for="operazione">Operazione:</label>
+    <select id="operazione">
+        <option value="+">Somma (+)</option>
+        <option value="-">Sottrazione (-)</option>
+        <option value="*">Moltiplicazione (*)</option>
+        <option value="/">Divisione (/)</option>
+    </select>
+
+    <button onclick="calcola()">Calcola</button>
+
+    <div id="risultato"></div>
+
+    <script>
+        function calcola() {
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const operazione = document.getElementById("operazione").value;
+            let risultato;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                risultato = "Inserisci entrambi i numeri.";
+            } else {
+                switch (operazione) {
+                    case "+":
+                        risultato = num1 + num2;
+                        break;
+                    case "-":
+                        risultato = num1 - num2;
+                        break;
+                    case "*":
+                        risultato = num1 * num2;
+                        break;
+                    case "/":
+                        risultato = num2 !== 0 ? num1 / num2 : "Errore: divisione per zero!";
+                        break;
+                    default:
+                        risultato = "Operazione non valida.";
+                }
+            }
+
+            document.getElementById("risultato").innerText = "Risultato: " + risultato;
+        }
+    </script>
+
+</body>
+</html>

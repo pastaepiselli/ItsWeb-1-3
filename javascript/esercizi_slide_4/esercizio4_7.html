@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numero più grande</title>
+</head>
+<body>
+    <script>
+        let numeri = [12, 5, 9, 21, 7, 14, 3];
+        let max = numeri[0];
+
+        for (let i = 1; i < numeri.length; i++) {
+            if (numeri[i] > max) {
+                max = numeri[i];
+            }
+        }
+
+        console.log("Il numero più grande è: " + max);
+    </script>
+</body>
+</html>

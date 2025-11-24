@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioco inndovina il numero</title>
+</head>
+<body>
+    <script>
+        let randomnumber = Math.floor(Math.random * 101);
+        let tentativi = 0;
+
+        function checknumber(){
+            let numero = document.getElementById('tentativo').value;
+            let mess = ''
+            tentativi ++;
+
+            if (numero == randomnumber){
+                mess = 'Hai indovinato in ' + tentativi + ' tentativi!'
+            }
+            else if (numero > randomnumber){
+                mess = 'Piu piccolo!'
+            }
+            else{
+                mess = 'Piu grande!'
+            }
+            document.getElementById('risultato').innerText = mess
+            document.getElementById('conteggio').innerText = tentativi
+
+        }
+    </script>
+    <h1>Guessing game</h1>
+
+    <div>
+        <input type="text" id="tentativo">
+        <button onclick="checknumber()">Controlla</button>
+        <p id="risultato"></p>
+        <p>Tentativi</p>
+        <input type="text" id="conteggio"disabled >
+    </div>
+    <div>
+        
+    </div>
+    
+</body>
+
+</html>

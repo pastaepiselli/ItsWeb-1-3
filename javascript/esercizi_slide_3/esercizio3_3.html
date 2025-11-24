@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        x = prompt('Inserire numero di secondi')
+        let ore = 0;
+        let minuti = 0;
+        let secondi = 0;
+
+        while (x > 0) {
+
+            if (x > 3600){
+                ore += 1
+                x -= 3600
+            }
+            if (x > 60){
+                minuti += 1
+                x -= 60
+            }
+
+            secondi += 1
+            x -= 1
+
+            if (secondi >= 60){
+                minuti += 1
+                secondi -= 60
+            }
+
+        }
+
+        console.log('Ore = ' + ore + ' Minuti = ' +  minuti + ' Secondi = ' + secondi)
+    </script>
+</body>
+</html>

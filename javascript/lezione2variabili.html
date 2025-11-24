@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // console.log(nome) // undefined
+
+        // FASE 1 - fino al 2009
+        // Hoisting : "sposta" il codice ...
+        //      1 sposta TUTTE le dichiarazioni di variabili in cima allo scope
+        //      2 sposta TUTTE le funzioni
+        var nome = 'Mario';
+        var nome = 'Luca'; // override
+
+        // FASE 2 - dal 2009 ES
+        let nome2 = 'Luca';
+        // let nome2 = 'Mario';
+
+        // js: tipizzato debole ... non si puo dichiarare il tipo
+
+        // pippo = 10; // var !!   
+
+        // let pippo = 'ciao'; // modo corretto, tipizzazione debole perche posso cambiarne il tipo
+
+        let x = 10
+
+        +20
+
+        console.log(x);
+
+        // string numb boolean null undefined
+        // TUTTI OGGETTI
+
+        // string FASE 1
+        var nominativo = "Mario e \"bello\" ";
+        var nominativo2 = "Mario" +  x + "Rossi";
+
+        // FASE 2 template string ... backtick accento grave ALT + 96 tastierino (`)
+        let nominativo = `Mario ${x} '' "" Rossi e il mio collega`;
+
+        console.log(nominativo2)
+
+        // number ... html ... form ... input ... stringa
+
+        let anni = document.getElementById('MIo numero').value;
+        console.log(typeof(anni));
+
+        parseInt(anni) // passi una stringa e la trasforma in intero
+        parseFloat(anni) // stessa cosa ma lascia i decimali
+
+        console.log(anni * "ciao"); // NaN ... a number
+        
+        // 2 strumenti ... Nan
+
+        isNaN('Ciao') // true 99%   
+        isNaN('') // false ...  
+
+        let z = '';
+
+        console.log(true*3) // 3
+
+        console.log('a'+ 3) // 3        
+
+
+
+        // js Number.isNaN()
+        Number.isNaN(); 
+        isNaN(); //
+
+        if (typeof(z) == 'number'){
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

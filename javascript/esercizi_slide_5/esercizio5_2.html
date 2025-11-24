@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function numerocompreso(n){
+            if (1 <=n && n <= 7){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function settimana(giorno){
+
+            switch (giorno) {
+                case 1:
+                    console.log('Lunedi')
+                    break
+                case 2:
+                    console.log('Martedi')
+                    break
+                case 3:
+                    console.log('Mercoledi')
+                    break
+                case 4:
+                    console.log('Giovedi')
+                    break
+                case 5:
+                    console.log('Venerdi')
+                    break
+                case 6:
+                    console.log('Sabato')
+                    break
+                case 7:
+                    console.log('Domenica')
+                    break
+
+                default:
+                    console.log('Peccato, non posso indovinare il giorno.')
+                    
+            }
+        }
+        console.log(numerocompreso(4))
+        settimana(4)
+    </script>
+</body>
+</html>
