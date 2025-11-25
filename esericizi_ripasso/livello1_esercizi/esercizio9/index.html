@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esercizio 9</title>
+    <style>
+        #campoInput{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        label{
+            font-weight: bolder;
+            margin-right: 5px;
+        }
+        button{
+            margin: 5px;
+        }
+        button:hover{
+            background-color: blue;
+
+        }
+        #lista{
+            display: flex;
+            
+        }
+    </style>
+  </head>
+  <body>
+    <div id="campoInput">
+      <label for="input">Aggiungi campo alla lista</label>
+      <input type="text" name="input" id="input" />
+      <button id="invio" onclick="addElement()">Invio</button>
+    </div>
+    <div>
+      <ul id="lista"></ul>
+    </div>
+    <script>
+      const input = document.getElementById("input");
+      const invio = document.getElementById("invio");
+      const ul = document.getElementById("lista");
+
+      const myList = [];
+
+      function addElement() {
+        elem = input.value; // prendo il valore in input 
+        if (elem.length === 0 ){
+            alert("L'elemento non puo essere vuoto")
+    
+        } else {
+            myList.push(elem); // lo aggiungo alla lista
+        }
+        
+
+        ul.innerHTML = "" // ri svuoto l'html 
+
+        myList.forEach((element) => { // itero nuovamente sulla lista e la aggiorno cosi con il nuovo elemento
+            // console.log(element)
+          const newLi = document.createElement("li"); // creo il tag li
+          newLi.textContent = element; // aggiugo il testo
+          ul.appendChild(newLi); // lo inserisco nel tag ul
+
+        // svuoto il campo in input 
+        input.value = ""
+        });
+      }
+    </script>
+  </body>
+</html>

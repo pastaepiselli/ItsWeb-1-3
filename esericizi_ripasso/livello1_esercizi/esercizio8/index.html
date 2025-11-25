@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 8</title>
+</head>
+<style>
+    div{
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        border: 2px solid black;
+        text-align: center;
+    }
+</style>
+<body>
+    <div>
+        <p id="auto"></p>
+    </div>
+    
+    <script>
+        const auto = {
+            modello: 'Fiat Panda',
+            anno: 1990 
+        }
+
+        const testo = document.getElementById("auto")
+
+        testo.innerHTML = `${auto['modello']} - ${auto['anno']}`
+    </script>
+</body>
+</html>

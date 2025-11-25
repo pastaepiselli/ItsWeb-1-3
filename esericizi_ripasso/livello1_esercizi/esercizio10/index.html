@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 10</title>
+</head>
+<style>
+    div{
+        display: flex;
+        border: 2px solid black;
+        width: 600px;
+        height: 400px;
+        align-items: center;
+        padding: 5px;
+    }
+</style>
+<body>
+    <div>
+        <input oninput="checkLength()" type="text" id="input">
+        <label for="soglia"> Soglia</label>
+        <input type="text" name="soglia" id="soglia">
+        <p id="messaggio"></p>
+    </div>
+
+    <script>
+
+        const input = document.getElementById('input')
+        const soglia = document.getElementById('soglia')
+        const messaggio = document.getElementById('messaggio')
+
+        const checkLength = () =>{
+            if (input.value.length < Number(soglia.value)) {
+                messaggio.innerHTML = 'Messaggio minore della soglia'
+            } else {
+                messaggio.innerHTML = 'Messaggio Valido'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esercizio 7</title>
+  </head>
+  <style>
+    #overlay {
+      opacity: 0.5;
+      width: 500px;
+      height: 500px;
+      border: 2px solid black;
+      background-color: aquamarine;
+    }
+    #container {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        height: 100vh;
+        
+    }
+    #buttone{
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        background-color: red;
+        margin: 330px;
+        margin-left: 445px
+
+    }
+    button{
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+  </style>
+
+  <body>
+    <div id="container">
+      <button onclick="hideShow()" class="btn">Mostra</button>
+      <div id="overlay">
+        <h1>Questo e un avviso!</h1>
+        <p>bkbkkbkbkbk pall ehtshthst</p>
+        <button id="buttone" onclick="hide()" class="btn">Chiudi</button>
+      </div>
+    </div>
+    <script>
+      const overlay = document.getElementById("overlay");
+      function hideShow() {
+        if (overlay.style.display == "none") {
+          overlay.style.display = "block";
+        } else {
+          overlay.style.display = "none";
+        }
+      }
+
+      function hide() {
+        overlay.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
