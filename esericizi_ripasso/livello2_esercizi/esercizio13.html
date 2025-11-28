@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 13</title>
+</head>
+<style>
+    body{
+        display: flex;
+    }
+    #sidebar{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        border: 2px solid black;
+        height: 100vh;
+    }
+    #sidebar-side{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        float: left;
+        border: 2px solid black;
+        height: 100vh;
+        text-align: center;
+        margin: 50 auto;
+    }
+
+
+    .option{
+        border: 2px solid black;
+        height: 10px;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+
+    }
+</style>
+<body>
+    <div id="sidebar">
+        <div onclick="showHome()" class="option" id="home">
+            Home
+        </div>
+        <div onclick="showSiamo() "class="option" id="siamo">
+            Chi Siamo?
+        </div>
+        <div onclick="showContattaci()" class="option" id="contattaci">
+            Contattaci
+        </div>
+    </div>
+    <div id="sidebar-side">
+        <h1 id="sidebar-info"></h1>
+    </div>
+    <script>
+        const home = document.getElementById('home')
+        const siamo = document.getElementById('siamo')
+        const contattaci = document.getElementById('contattaci')
+        const sidebar = document.getElementById('sidebar-side')
+        const info = document.getElementById('sidebar-info')
+        function showHome() {
+            if (sidebar.style.display == 'none'){
+                sidebar.style.display = 'block'
+                sidebar.innerHTML = 'HOME'
+            } else {
+                sidebar.style.display = 'none'
+            }
+        }
+        function showSiamo() {
+            if (sidebar.style.display == 'none'){
+                sidebar.style.display = 'block'
+                sidebar.innerHTML = 'CHI SIAMO'
+            } else {
+                sidebar.style.display = 'none'
+            }
+        }
+        function showContattaci() {
+            if (sidebar.style.display == 'none'){
+                sidebar.style.display = 'block'
+                sidebar.innerHTML = 'CONTATTACI'
+            } else {
+                sidebar.style.display = 'none'
+            }
+        }
+    </script>
+</body>
+</html>

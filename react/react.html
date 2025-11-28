@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- esempio per usare react senza creare applicazione con npm, SENZA JSX-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- importo react  -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- importo babel -->
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+    <!-- il contenuto dello script deve essere implementato da babel -->
+    <script src="script.jsx" type="text/table">
+
+    </script>
+    <style>
+      .main {
+        background-color: blanchedalmond;
+        color: blue;
+        border: 5px solid black;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // prendiamo l'id del div
+      const rootDiv = document.getElementById("root");
+
+      // creaiamo un dom virtuale con react
+      // quindi ogni modifica prima verra modificato il dom virtuale per poi modificare quello reale
+      const root = ReactDom.createRoot(rootDiv);
+
+      // per creare un elemento in react SENZA JSX SOLO DIMOSTRAZIONE TUTTO QUESTO
+      // 3 parmertri:
+      // - tipo di tag
+      // - attributi vari
+      // - contenuto
+      const h1 = React.createElement(
+        "h1",
+        {
+          style: {
+            color: "green",
+          },
+          onClick: (e) => console.log(e),
+        },
+        "Ciao sono un h1!"
+      );
+
+      // lista
+      const ul = React.createElement("li", { key: "ul" }, [
+        // key necessaria perche presente nella lista del render del main
+        React.createElement("li", { key: "php" }, "PHP"), // prop key unica per ogni elemento della lista
+        React.createElement("li", { key: "html" }, "HTML"),
+        React.createElement("li", { key: "angular" }, "ANGULAR"),
+      ]);
+
+      // creo un elemento main
+      const main = React.createElement(
+        "main",
+        {
+          className: "main",
+        },
+        [h1, ul]
+      ); //  per renderizzare l'h1 sul main, con piu elementi da renderizzare si usa una lista, necessaria key per ogni elemento
+
+      // renderizzo tutto con html
+      root.render();
+
+      // per rendere tutto questo jsx c'e un compilatore BABEL che riscrive da cosi cosi a jsx
+      // vai a vedere https://babeljs.io/
+    </script>
+  </body>
+</html>
