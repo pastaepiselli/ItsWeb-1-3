@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esercizio 20</title>
+  <body>
+    <input oninput="filter()" type="text" id="filtro" />
+    <ul id="lista"></ul>
+    <script>
+      // prendo gli elementi html
+      const input = document.getElementById("filtro");
+      const lista = document.getElementById("lista");
+
+      // lista
+      const nomi = [
+        "Daniela",
+        "Giuseppe",
+        "Lorenzo",
+        "Luca",
+        "Tiziano",
+        "Riccardo",
+        "Valerio",
+        "Pier",
+        "Alessandro",
+        "Emiliano",
+        "Flavia",
+        "Leonardo",
+      ];
+
+      // in input predo delle lettere e faccio verdere solo i nomi con quelle lettere 
+      function filter() {
+
+        lista.innerHTML = ""
+
+        for (const name of nomi) {
+            // creo elemento e metto il valore 
+          const li = document.createElement("li");
+          li.textContent = name;
+          li.key = name;
+          // se input vuoto allora non mostro nietne
+          if (input.value === ""){ 
+            console.log('Ok')
+            // senno controllo
+          } else if (name.includes(input.value)){
+            // solo qua lo aggiungo alla lista
+            lista.appendChild(li);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
